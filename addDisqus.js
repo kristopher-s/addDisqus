@@ -1,8 +1,8 @@
 //START: Disqus integration
 
-answersSdk.addListener(answersSdk.events.pageLoad, function (event) {
-  
-  if (answersSdk.getVisiblePageType() === answersSdk.pages.article) {
+Answers.onPageLoad(function (event, data) {
+  // Page loaded! All dom elements are visible now.
+    if (data.pageType === 20) {
   
   //Disqus config vars for article-specific comments.
   const disqus_config = function () { 
@@ -11,7 +11,7 @@ answersSdk.addListener(answersSdk.events.pageLoad, function (event) {
   };
   
   //Targets DOM node after where we will insert Disqus container.
-  const targetNode = document.querySelector(".article-actions");
+  const targetNode = document.querySelector(".feedback-section-container");
     
   //Creates DIV where Disqus container will reside.
   const createDisqusContainer = document.createElement('div')
@@ -25,7 +25,7 @@ answersSdk.addListener(answersSdk.events.pageLoad, function (event) {
   insertDisqus.setAttribute('data-timestamp', +new Date());
   targetNode.appendChild(insertDisqus)
 
-}
+  }
 });
 
 //END: Disqus integration
