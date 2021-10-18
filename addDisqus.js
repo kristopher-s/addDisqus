@@ -3,11 +3,12 @@
 Answers.onPageLoad(function (event, data) {
   // Page loaded! All dom elements are visible now.
     if (data.pageType === 20) {
+      console.log(event);
   
   //Disqus config vars for article-specific comments.
-  const disqus_config = function () { 
-  this.page.url = answersSdk.getVisiblePageData().article.url;
-  this.page.identifier = answersSdk.getVisiblePageData().article.id;
+  //const disqus_config = function () { 
+  //this.page.url = answersSdk.getVisiblePageData().article.url;
+  //this.page.identifier = answersSdk.getVisiblePageData().article.id;
   };
   
   //Targets DOM node after where we will insert Disqus container.
