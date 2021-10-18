@@ -1,5 +1,6 @@
 //START: Disqus
 Answers.onPageLoad(function (event, data) {
+    //ONLY loads Disqus on article pages.
     if (data.pageType === 20) {
   
   //Disqus config vars
@@ -8,7 +9,7 @@ Answers.onPageLoad(function (event, data) {
   this.page.identifier = event.article.id;
   };
   
-  (function() { // DON'T EDIT BELOW THIS LINE
+  (function() {
     var d = document, s = d.createElement('script');
     // REPLACE s.src BELOW with your Disqus embed URL
     s.src = 'https://platypusplayground.disqus.com/embed.js';
